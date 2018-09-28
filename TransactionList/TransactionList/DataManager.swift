@@ -8,8 +8,11 @@
 
 import Foundation
 
+
+
 class DataManager {
     var transactionList : [TransactionData] = []
+    var delegate: LoadingDelegate?
     static let urlString = "http://www.mocky.io/v2/5b33bdb43200008f0ad1e256"
     
     func getTransactions() {
@@ -20,9 +23,14 @@ class DataManager {
             do{
                let transactions = try JSONDecoder().decode(GlobalData.self, from: data)
                 self.transactionList = transactions.data
+                
+                DispatchQueue.main.async {
+                    self.delegate?.dataReceived()
+                }
             }
             catch let jsonError {
                 print("Error serializing json", jsonError)
+                self.delegate?.dataFailed()
             }
         }.resume()
     }

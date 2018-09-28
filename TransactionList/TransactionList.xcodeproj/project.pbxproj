@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5865DE5215D811F00824137 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865DE4215D811F00824137 /* TransactionsViewController.swift */; };
+		D5865DE7215E14DB00824137 /* TransactionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865DE6215E14DB00824137 /* TransactionsPresenter.swift */; };
+		D5865DEA215E14ED00824137 /* TransactionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */; };
 		D5A77277215D76C700251863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A77276215D76C700251863 /* AppDelegate.swift */; };
 		D5A7727C215D76C700251863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A7727A215D76C700251863 /* Main.storyboard */; };
 		D5A7727E215D76C800251863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A7727D215D76C800251863 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5865DE4215D811F00824137 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		D5865DE6215E14DB00824137 /* TransactionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenter.swift; sourceTree = "<group>"; };
+		D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsProtocol.swift; sourceTree = "<group>"; };
 		D5A77273215D76C700251863 /* TransactionList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A77276215D76C700251863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5A7727B215D76C700251863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				D5A7727F215D76C800251863 /* LaunchScreen.storyboard */,
 				D5A77282215D76C800251863 /* Info.plist */,
 				D5A772A7215D7BCF00251863 /* DataManager.swift */,
+				D5865DE4215D811F00824137 /* TransactionsViewController.swift */,
+				D5865DE6215E14DB00824137 /* TransactionsPresenter.swift */,
+				D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -269,6 +278,9 @@
 			files = (
 				D5A772A6215D775D00251863 /* TransactionData.swift in Sources */,
 				D5A772A8215D7BCF00251863 /* DataManager.swift in Sources */,
+				D5865DEA215E14ED00824137 /* TransactionsProtocol.swift in Sources */,
+				D5865DE5215D811F00824137 /* TransactionsViewController.swift in Sources */,
+				D5865DE7215E14DB00824137 /* TransactionsPresenter.swift in Sources */,
 				D5A77277215D76C700251863 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
