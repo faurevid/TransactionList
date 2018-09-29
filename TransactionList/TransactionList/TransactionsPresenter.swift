@@ -16,13 +16,13 @@ class TransactionsPresenter {
     var transactions: [TransactionData]?
     var transactionsByDate = [Date : [TransactionData]]()
     let dateFormatter = DateFormatter()
+    let imageCache2 = NSCache<NSString, UIImage>()
     
     init(view: TransactionViewControllerProtocol){
         self.view = view
         dataManager.delegate = self
         dataManager.getTransactions()
     }
-    
 
 }
 
@@ -41,10 +41,6 @@ extension TransactionsPresenter: LoadingDelegate{
             }
         }
         dates = transactionsByDate.keys.sorted(by: {$0 < $1})
-        print(dates)
-//        var transactionsByDate2 = [Date : [TransactionData]]()
-//         transactionsByDate2 = [Date: [TransactionData]](uniqueKeysWithValues: transactionsByDate.sorted(by: {$0.key < $1.key}))
-//        transactionsByDate = transactionsByDate2
        
         view?.reloadData()
     }
@@ -60,19 +56,24 @@ extension TransactionsPresenter: TransactionPresenterProtocol{
     }
     
     func titleForSection(forSection: Int) -> String{
-        let date = dates[forSection] //Array(transactionsByDate.keys)[forSection]
+        let date = dates[forSection]
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         return dateFormatter.string(from: date)
     }
     
     func numberOfTransactions(forSection: Int) -> Int{
-        let date =  dates[forSection]//Array(transactionsByDate.keys)[atSection]
+        let date =  dates[forSection]
         return transactionsByDate[date]!.count
     }
     
-    func willShow(cell: UITableViewCell, indexPath: IndexPath) {
-        let date = dates[indexPath.section] //Array(transactionsByDate.keys)[indexPath.section]
-        cell.textLabel?.text = transactionsByDate[date]![indexPath.row].description
-        cell.detailTextLabel?.text =  transactionsByDate[date]![indexPath.row].amount.getAmountString()
+    func willShow(cell: TransactionCell, indexPath: IndexPath) {
+        let date = dates[indexPath.section]
+        let transaction = transactionsByDate[date]![indexPath.row]
+        cell.transactionTitle?.text = transaction.description
+        cell.transactionAmout?.text =  transaction.amount.getAmountString()
+        cell.productIcon.cacheImage(urlString: transaction.product.icon)
     }
+    
+    
+ 
 }

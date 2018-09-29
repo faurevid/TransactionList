@@ -17,7 +17,7 @@ protocol TransactionPresenterProtocol : class {
     func numberOfSections() -> Int
     func titleForSection(forSection: Int) -> String
     func numberOfTransactions(forSection: Int) -> Int
-    func willShow(cell: UITableViewCell, indexPath: IndexPath)
+    func willShow(cell: TransactionCell, indexPath: IndexPath)
 }
 
 protocol LoadingDelegate {
