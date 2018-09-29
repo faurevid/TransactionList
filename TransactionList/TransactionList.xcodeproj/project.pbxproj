@@ -12,6 +12,7 @@
 		D5865DEA215E14ED00824137 /* TransactionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */; };
 		D5865E0B2160279300824137 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865E0A2160279300824137 /* TransactionCell.swift */; };
 		D5865E0E21602A1A00824137 /* UIImageView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865E0D21602A1A00824137 /* UIImageView+extensions.swift */; };
+		D5865E1221602EC900824137 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5865E1121602EC900824137 /* Reachability.swift */; };
 		D5A77277215D76C700251863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A77276215D76C700251863 /* AppDelegate.swift */; };
 		D5A7727C215D76C700251863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A7727A215D76C700251863 /* Main.storyboard */; };
 		D5A7727E215D76C800251863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A7727D215D76C800251863 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsProtocol.swift; sourceTree = "<group>"; };
 		D5865E0A2160279300824137 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		D5865E0D21602A1A00824137 /* UIImageView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extensions.swift"; sourceTree = "<group>"; };
+		D5865E1121602EC900824137 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D5A77273215D76C700251863 /* TransactionList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A77276215D76C700251863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5A7727B215D76C700251863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,9 +91,29 @@
 		D5865E0C21602A0100824137 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D5865E1121602EC900824137 /* Reachability.swift */,
 				D5865E0D21602A1A00824137 /* UIImageView+extensions.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D5865E0F21602C5900824137 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5865DE4215D811F00824137 /* TransactionsViewController.swift */,
+				D5865DE6215E14DB00824137 /* TransactionsPresenter.swift */,
+				D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */,
+				D5865E0A2160279300824137 /* TransactionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D5865E1021602C6E00824137 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				D5A772A7215D7BCF00251863 /* DataManager.swift */,
+			);
+			path = Communication;
 			sourceTree = "<group>";
 		};
 		D5A7726A215D76C600251863 = {
@@ -117,6 +139,8 @@
 		D5A77275215D76C700251863 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				D5865E1021602C6E00824137 /* Communication */,
+				D5865E0F21602C5900824137 /* Views */,
 				D5865E0C21602A0100824137 /* Common */,
 				D5A772A4215D774A00251863 /* Model */,
 				D5A77276215D76C700251863 /* AppDelegate.swift */,
@@ -124,11 +148,6 @@
 				D5A7727D215D76C800251863 /* Assets.xcassets */,
 				D5A7727F215D76C800251863 /* LaunchScreen.storyboard */,
 				D5A77282215D76C800251863 /* Info.plist */,
-				D5A772A7215D7BCF00251863 /* DataManager.swift */,
-				D5865DE4215D811F00824137 /* TransactionsViewController.swift */,
-				D5865DE6215E14DB00824137 /* TransactionsPresenter.swift */,
-				D5865DE9215E14ED00824137 /* TransactionsProtocol.swift */,
-				D5865E0A2160279300824137 /* TransactionCell.swift */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -295,6 +314,7 @@
 				D5A772A8215D7BCF00251863 /* DataManager.swift in Sources */,
 				D5865DEA215E14ED00824137 /* TransactionsProtocol.swift in Sources */,
 				D5865DE5215D811F00824137 /* TransactionsViewController.swift in Sources */,
+				D5865E1221602EC900824137 /* Reachability.swift in Sources */,
 				D5865DE7215E14DB00824137 /* TransactionsPresenter.swift in Sources */,
 				D5865E0E21602A1A00824137 /* UIImageView+extensions.swift in Sources */,
 				D5A77277215D76C700251863 /* AppDelegate.swift in Sources */,
