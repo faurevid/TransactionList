@@ -26,9 +26,16 @@ extension TransactionViewController :  TransactionViewControllerProtocol{
 }
 
 extension TransactionViewController: UITableViewDataSource, UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return (presenter?.numberOfSections())!
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter?.titleForSection(forSection: section)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let presenter = presenter else { return 0 }
-        return presenter.numberOfTransactions()
+        return presenter.numberOfTransactions(forSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

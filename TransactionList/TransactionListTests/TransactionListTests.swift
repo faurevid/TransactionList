@@ -10,10 +10,10 @@ import XCTest
 @testable import TransactionList
 
 class TransactionListTests: XCTestCase {
-    
+    var dm: DataManager!
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      dm = DataManager()
     }
     
     override func tearDown() {
@@ -21,18 +21,10 @@ class TransactionListTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        let dm = DataManager()
+    func testGetTransaction() {
         dm.getTransactions()
         sleep(5)
         XCTAssertTrue(dm.transactionList.count > 0)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+  
 }

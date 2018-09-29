@@ -14,7 +14,9 @@ protocol TransactionViewControllerProtocol : class {
 }
 
 protocol TransactionPresenterProtocol : class {
-    func numberOfTransactions() -> Int
+    func numberOfSections() -> Int
+    func titleForSection(forSection: Int) -> String
+    func numberOfTransactions(forSection: Int) -> Int
     func willShow(cell: UITableViewCell, indexPath: IndexPath)
 }
 

@@ -57,6 +57,15 @@ struct AmountData: Decodable {
         value = try values.decode(Double.self, forKey: .value)
         currencyIso = try values.decode(String.self, forKey: .currencyIso)
     }
+    
+    //returns the amount with the right currency
+    func getAmountString() -> String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.currencyCode = currencyIso
+        return currencyFormatter.string(from: NSNumber(value: value))!
+    }
 }
 
 struct ProductData: Decodable{
