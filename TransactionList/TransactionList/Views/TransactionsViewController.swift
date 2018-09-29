@@ -2,7 +2,7 @@
 //  TransactionsViewController.swift
 //  TransactionList
 //
-//  Created by FAURE-VIDAL Laurene (Prestataire)  [IT-CE] on 27/09/2018.
+//  Created by FAURE-VIDAL Laurene  on 27/09/2018.
 //  Copyright © 2018 FAURE-VIDAL Laurene. All rights reserved.
 //
 
@@ -13,6 +13,7 @@ class TransactionViewController : UIViewController {
     @IBOutlet weak var transactionsTableView: UITableView!
     weak var presenter: TransactionPresenterProtocol?
     
+    //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = TransactionsPresenter(view: self)
@@ -37,11 +38,13 @@ class TransactionViewController : UIViewController {
     }
 }
 
+//MARK: TransactionViewControllerProtocol
 extension TransactionViewController :  TransactionViewControllerProtocol{
     func reloadData() {
         transactionsTableView.reloadData()
     }
     
+    //MARK: Error handling
     func displayError(error: Error) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         
@@ -61,6 +64,7 @@ extension TransactionViewController :  TransactionViewControllerProtocol{
     }
 }
 
+//MARK: TableView management
 extension TransactionViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return (presenter?.numberOfSections())!

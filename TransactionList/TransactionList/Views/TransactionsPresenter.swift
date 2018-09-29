@@ -2,7 +2,7 @@
 //  TransactionsPresenter.swift
 //  TransactionList
 //
-//  Created by FAURE-VIDAL Laurene (Prestataire)  [IT-CE] on 28/09/2018.
+//  Created by FAURE-VIDAL Laurene  on 28/09/2018.
 //  Copyright © 2018 FAURE-VIDAL Laurene. All rights reserved.
 //
 
@@ -26,7 +26,9 @@ class TransactionsPresenter {
     func didAppear() {
         launchRequest()
     }
+    
     func launchRequest(){
+        //Check network connection
         if Reachability.isConnectedToNetwork(){
             dataManager.getTransactions()
         }
@@ -36,6 +38,7 @@ class TransactionsPresenter {
     }
 }
 
+//MARK: Loading delegate
 extension TransactionsPresenter: LoadingDelegate{
     func dataReceived(){
         transactions = dataManager.transactionList
@@ -60,6 +63,7 @@ extension TransactionsPresenter: LoadingDelegate{
     }
 }
 
+//MARK: TransactionPresenterProtocol
 extension TransactionsPresenter: TransactionPresenterProtocol{
     func numberOfSections() -> Int{
         return transactionsByDate.keys.count

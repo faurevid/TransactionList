@@ -2,7 +2,7 @@
 //  TransactionsProtocol.swift
 //  TransactionList
 //
-//  Created by FAURE-VIDAL Laurene (Prestataire)  [IT-CE] on 28/09/2018.
+//  Created by FAURE-VIDAL Laurene  on 28/09/2018.
 //  Copyright © 2018 FAURE-VIDAL Laurene. All rights reserved.
 //
 
