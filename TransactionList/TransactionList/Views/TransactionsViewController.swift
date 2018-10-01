@@ -76,7 +76,7 @@ extension TransactionViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 21))
         header.backgroundColor = UIColor(red: 92/255, green: 94/255, blue: 109/255, alpha: 1)
-        let hLabel = UILabel(frame: CGRect(x: 10, y: 3, width: 200, height: 21))
+        let hLabel = UILabel(frame: CGRect(x: 10, y: 3, width: tableView.frame.size.width - 20, height: 21))
         hLabel.textColor = UIColor.white
         hLabel.text = presenter?.titleForSection(forSection: section)
         hLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
